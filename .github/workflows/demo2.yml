@@ -1,0 +1,15 @@
+name: GitHub Actions Demo
+on: [push] # The event that triggers the workflow
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest # The type of machine to run the job on
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4 # Standard action to clone your repo
+
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
+
+      - name: Say Hello
+        run: echo "The job status is ${{ job.status }}."
